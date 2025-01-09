@@ -1,0 +1,39 @@
+# models:
+#   Post:
+#     title: string
+#     cover: string
+#     body: text
+#     published_at: nullable datetime
+#     user_id: unsignedInteger
+#     category_id: unsignedInteger nullable
+#     softDeletes
+#     relationships:
+#       belongsTo: User,Category
+#       belongsToMany: Tag
+
+#   Category:
+#     title: string
+#     relationships:
+#       hasMany: Post
+
+#   Tag:
+#     title: string
+#     relationships:
+#       belongsToMany: Post
+models:
+  Product:
+    title: string
+    description: text nullable
+    cover: string
+    price: int
+    sale: int nullable
+    gallery: string nullable
+    published_at: nullable timestamp
+    status: string
+    category_id: unsignedInteger nullable
+    softDeletes
+    relationships:
+      belongsTo: Category
+
+
+

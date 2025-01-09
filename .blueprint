@@ -1,0 +1,10 @@
+created:
+    - database/factories/ProductFactory.php
+    - database/migrations/2025_01_09_204838_create_products_table.php
+    - app/Models/Product.php
+models:
+    Category: { title: string }
+    Post: { title: string, cover: 'string nullable', body: text, published_at: 'datetime nullable', user_id: 'biginteger unsigned', category_id: 'biginteger unsigned nullable' }
+    Tag: { title: string }
+    User: { name: string, email: string, email_verified_at: 'timestamp nullable', password: string, remember_token: 'string:100 nullable' }
+    Product: { title: string, description: 'text nullable', cover: string, price: int, sale: 'int nullable', gallery: 'string nullable', published_at: 'nullable timestamp', status: string, category_id: 'unsignedInteger nullable', softdeletes: softDeletes, relationships: { belongsTo: Category } }
