@@ -12,11 +12,10 @@
     <nav class="w-full flex justify-between px-3 py-5 bg-zinc-900 text-zinc-100">
         <a href="#">Logo</a>
         <div class="space-x-3">
-            <a href="#">link</a>
-            <a href="#">link</a>
-            <a href="#">link</a>
-            <a href="#">link</a>
-            <a href="#">link</a>
+            <a href="/">所有商品</a>
+            @foreach ($categories as $category )
+            <a href="#">{{$category->title}}</a>
+            @endforeach
         </div>
     </nav>
     <section class="bg-teal-50 py-24">
@@ -24,7 +23,7 @@
             <h2 class="w-full text-center text-3xl font-bold mb-4">熱賣商品</h2>
             @foreach ($products_feature as $p)
             <div class="w-1/4 p-3">
-                <a href="#" class="flex flex-col border border-zinc-400 rounded overflow-hidden">
+                <a href="{{route('product.show',$p->id)}}" class="flex flex-col border border-zinc-400 rounded overflow-hidden">
                     <div class="aspect-square">
                         <img src="/storage/{{$p->cover}}" alt="" class="w-full h-full object-cover">
                     </div>
@@ -49,7 +48,7 @@
             <h2 class="w-full text-center text-3xl font-bold mb-4">特價商品</h2>
             @foreach ($products_sale as $p)
             <div class="w-1/4 p-3">
-                <a href="#" class="flex flex-col border border-zinc-400 rounded overflow-hidden">
+                <a href="{{route('product.show',$p->id)}}" class="flex flex-col border border-zinc-400 rounded overflow-hidden">
                     <div class="aspect-square">
                         <img src="/storage/{{$p->cover}}" alt="" class="w-full h-full object-cover">
                     </div>

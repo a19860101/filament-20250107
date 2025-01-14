@@ -20,5 +20,5 @@ use App\Http\Controllers\PageController;
 // });
 
 Route::get('/',[PageController::class, 'index'])->name('index');
-
+Route::get('/product/{product}',[PageController::class,'show'])->name('product.show');
 
