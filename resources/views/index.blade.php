@@ -19,19 +19,38 @@
             <a href="#">link</a>
         </div>
     </nav>
-    <section>
+    <section class="bg-teal-50 py-24">
         <div class="container mx-auto flex flex-wrap">
+            <h2 class="w-full text-center text-3xl font-bold mb-4">熱賣商品</h2>
             @foreach ($products_feature as $p)
             <div class="w-1/4 p-3">
-                <div class="border">
-                    <div>
-                        <img src="/storage/{{$p->cover}}" alt="">
+                <a href="#" class="flex flex-col border border-zinc-400 rounded overflow-hidden">
+                    <div class="aspect-square">
+                        <img src="/storage/{{$p->cover}}" alt="" class="w-full h-full object-cover">
                     </div>
-                    <div>
+                    <div class="p-3 flex flex-col h-full bg-white">
                         <h4>{{$p->title}}</h4>
-                        <div>{{$p->price}}</div>
+                        <div class="mt-auto">${{$p->price}}</div>
                     </div>
-                </div>
+                </a>
+            </div>
+            @endforeach
+        </div>
+    </section>
+    <section class="py-24">
+        <div class="container mx-auto flex flex-wrap">
+            <h2 class="w-full text-center text-3xl font-bold mb-4">特價商品</h2>
+            @foreach ($products_sale as $p)
+            <div class="w-1/4 p-3">
+                <a href="#" class="flex flex-col border border-zinc-400 rounded overflow-hidden">
+                    <div class="aspect-square">
+                        <img src="/storage/{{$p->cover}}" alt="" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-3 flex flex-col h-full bg-white">
+                        <h4>{{$p->title}}</h4>
+                        <div class="mt-auto">${{$p->price}}</div>
+                    </div>
+                </a>
             </div>
             @endforeach
         </div>
