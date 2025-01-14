@@ -13,6 +13,7 @@
         <a href="/">Logo</a>
         <div class="space-x-3">
             <a href="/">所有商品</a>
+            <a href="{{route('post_index')}}">最新消息</a>
             @foreach ($categories as $category )
             <a href="{{route('category_index',$category->id)}}">{{$category->title}}</a>
             @endforeach

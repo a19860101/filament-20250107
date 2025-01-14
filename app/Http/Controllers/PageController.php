@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Models\Product;
 use App\Models\Category;
+use App\Models\Post;
 
 class PageController extends Controller
 {
@@ -30,5 +31,12 @@ class PageController extends Controller
         $products = Product::where('category_id',$id)->get();
 
         return view('category_index',compact('products','categories','c'));
+    }
+
+    public function post_index(){
+        $categories = Category::get();
+        $posts = Post::get();
+        return view('post_index',compact('posts','categories'));
+
     }
 }

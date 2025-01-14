@@ -23,3 +23,5 @@ Route::get('/',[PageController::class, 'index'])->name('index');
 Route::get('/product/{product}',[PageController::class,'show'])->name('product.show');
 Route::get('/category/{id}',[PageController::class,'category_index'])->name('category_index');
 
+Route::get('/post',[PageController::class,'post_index'])->name('post_index');
+
