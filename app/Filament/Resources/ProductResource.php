@@ -49,7 +49,7 @@ class ProductResource extends Resource
                     ->required()
                     ->maxLength(255),
                 Forms\Components\TextInput::make('sale')
-                    ->label('原價')
+                    ->label('特價')
                     ->maxLength(255),
                 Forms\Components\DateTimePicker::make('published_at')
                     ->label('上架日期'),

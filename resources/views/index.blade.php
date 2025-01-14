@@ -30,7 +30,14 @@
                     </div>
                     <div class="p-3 flex flex-col h-full bg-white">
                         <h4>{{$p->title}}</h4>
-                        <div class="mt-auto">${{$p->price}}</div>
+                        <div class="mt-auto">
+                            @if($p->sale == null)
+                            <b>${{$p->price}}</b>
+                            @else
+                            <b>${{$p->sale}}</b>
+                            <del class="text-sm text-zinc-400">${{$p->price}}</del>
+                            @endif
+                        </div>
                     </div>
                 </a>
             </div>
@@ -48,7 +55,14 @@
                     </div>
                     <div class="p-3 flex flex-col h-full bg-white">
                         <h4>{{$p->title}}</h4>
-                        <div class="mt-auto">${{$p->price}}</div>
+                        <div class="mt-auto">
+                            @if($p->sale == null)
+                            <b>${{$p->price}}</b>
+                            @else
+                            <b>${{$p->sale}}</b>
+                            <del class="text-sm text-zinc-400">${{$p->price}}</del>
+                            @endif
+                        </div>
                     </div>
                 </a>
             </div>
