@@ -18,35 +18,13 @@
             @endforeach
         </div>
     </nav>
-    <section class="bg-teal-50 py-24">
-        <div class="container mx-auto flex flex-wrap">
-            <h2 class="w-full text-center text-3xl font-bold mb-4">熱賣商品</h2>
-            @foreach ($products_feature as $p)
-            <div class="w-1/4 p-3">
-                <a href="{{route('product.show',$p->id)}}" class="flex flex-col border border-zinc-400 rounded overflow-hidden">
-                    <div class="aspect-square">
-                        <img src="/storage/{{$p->cover}}" alt="" class="w-full h-full object-cover">
-                    </div>
-                    <div class="p-3 flex flex-col h-full bg-white">
-                        <h4>{{$p->title}}</h4>
-                        <div class="mt-auto">
-                            @if($p->sale == null)
-                            <b>${{$p->price}}</b>
-                            @else
-                            <b>${{$p->sale}}</b>
-                            <del class="text-sm text-zinc-400">${{$p->price}}</del>
-                            @endif
-                        </div>
-                    </div>
-                </a>
-            </div>
-            @endforeach
-        </div>
-    </section>
     <section class="py-24">
         <div class="container mx-auto flex flex-wrap">
-            <h2 class="w-full text-center text-3xl font-bold mb-4">特價商品</h2>
-            @foreach ($products_sale as $p)
+            <h2 class="w-full text-center text-3xl font-bold mb-4"> {{$c->title}}商品</h2>
+            @if(count($products) == 0)
+            <h2 class="w-full text-center text-2xl font-bold mb-4">目前尚無商品</h2>
+            @endif
+            @foreach ($products as $p)
             <div class="w-1/4 p-3">
                 <a href="{{route('product.show',$p->id)}}" class="flex flex-col border border-zinc-400 rounded overflow-hidden">
                     <div class="aspect-square">

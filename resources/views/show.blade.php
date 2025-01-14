@@ -28,7 +28,7 @@
             <div class="w-1/2 flex flex-col p-4">
                 <h3 class="text-3xl font-bold mb-3">{{$product->title}}</h3>
                 <div>
-                    {{$product->description}}
+                    {!! $product->description !!}
                 </div>
                 <div class="mt-auto">
                     @if($product->sale == null)

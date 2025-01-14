@@ -22,4 +22,13 @@ class PageController extends Controller
         $categories = Category::get();
         return view('show',compact('product','categories'));
     }
+
+    public function category_index($id){
+        $categories = Category::get();
+        $c = Category::find($id);
+        // return $category->title;
+        $products = Product::where('category_id',$id)->get();
+
+        return view('category_index',compact('products','categories','c'));
+    }
 }
