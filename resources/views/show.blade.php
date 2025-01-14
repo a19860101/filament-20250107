@@ -18,6 +18,33 @@
             @endforeach
         </div>
     </nav>
+    <section class="py-24">
+        <div class="container mx-auto flex flex-wrap">
+            <div class="w-1/2 p-4">
+                <div class="aspect-square">
+                    <img src="/storage/{{$product->cover}}" alt="{{$product->title}}" class="w-full h-full object-cover">
+                </div>
+            </div>
+            <div class="w-1/2 flex flex-col p-4">
+                <h3 class="text-3xl font-bold mb-3">{{$product->title}}</h3>
+                <div>
+                    {{$product->description}}
+                </div>
+                <div class="mt-auto">
+                    @if($product->sale == null)
+                    <div><b class="text-3xl">${{$product->price}}</b></div>
+
+                    @else
+                    <div><b class="text-3xl">${{$product->sale}}</b></div>
+                    <div><del class="text-sm text-zinc-400">${{$product->price}}</del></div>
+                    @endif
+                </div>
+            </div>
+            <div class="w-full">
+
+            </div>
+        </div>
+    </section>
 
 </body>
 </html>
